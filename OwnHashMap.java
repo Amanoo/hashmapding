@@ -22,7 +22,7 @@ public class OwnHashMap<T> implements OwnMapInterface<T> {
 
     @Override
     public int add(OwnElement<T> element1) {
-        return ((OwnMap)bucketList.get(firstPartKey(element1.getKey())).getValue()).add(element1);
+        return bucketList.get(firstPartKey(element1.getKey())).getValue().add(element1);
     }
 
     @Override
@@ -30,7 +30,7 @@ public class OwnHashMap<T> implements OwnMapInterface<T> {
         int i=0;
         OwnElement element = null;
         while(i<size && element == null){
-            element=((OwnMap)bucketList.get(i).getValue()).remove(key);
+            element=bucketList.get(i).getValue().remove(key);
             i++;
         }
         return element;
@@ -41,7 +41,7 @@ public class OwnHashMap<T> implements OwnMapInterface<T> {
 
         int numberOfElements =0;
         for(int i =0; i<size;i++){
-            numberOfElements += ((OwnMap)bucketList.get(i).getValue()).size();
+            numberOfElements += bucketList.get(i).getValue().size();
         }
         return numberOfElements;
     }
@@ -50,7 +50,7 @@ public class OwnHashMap<T> implements OwnMapInterface<T> {
     public boolean isEmpty() {
         boolean empty=true;
         for(int i =0; i<size;i++){
-            if(!((OwnMap)bucketList.get(i).getValue()).isEmpty()){
+            if(!bucketList.get(i).getValue().isEmpty()){
                 empty=false;
             }
         }
@@ -58,12 +58,12 @@ public class OwnHashMap<T> implements OwnMapInterface<T> {
     }
 
     @Override
-    public OwnElement get(int key) {
+    public OwnElement<T> get(int key) {
         int i=0;
         OwnElement element = null;
         while(i<size && element == null){
-            if(((OwnMap)bucketList.get(i).getValue()).get(key)!=null);
-            element=((OwnMap)bucketList.get(i).getValue()).get(key);
+            if(bucketList.get(i).getValue().get(key)!=null);
+            element=bucketList.get(i).getValue().get(key);
             i++;
         }
         return element;
@@ -73,7 +73,7 @@ public class OwnHashMap<T> implements OwnMapInterface<T> {
     public void print() {
         for(int i =0; i<size;i++){
             System.out.println("BucketList "+i+":");
-            ((OwnMap)bucketList.get(i).getValue()).print();
+            bucketList.get(i).getValue().print();
         }
     }
 }

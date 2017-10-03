@@ -53,7 +53,7 @@ public class OwnMap<T> implements OwnMapInterface<T>{
     }
 
     @Override
-    public OwnElement get(int key){
+    public OwnElement<T> get(int key){
         OwnElement result = null;
         boolean found = false;
         int i = 0;

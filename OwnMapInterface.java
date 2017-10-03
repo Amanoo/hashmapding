@@ -9,6 +9,6 @@ public interface OwnMapInterface<T> {
     public OwnElement<T> remove(int key);
     public int size();
     public boolean isEmpty();
-    public OwnElement get(int key);
+    public OwnElement<T> get(int key);
     public void print();
 }

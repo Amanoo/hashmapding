@@ -11,7 +11,7 @@ public class test {
         ownMapStrings.add(new OwnElement(35,"het"));
         ownMapStrings.add(new OwnElement(7,"ke5y"));
         ownMapStrings.add(new OwnElement(532,new OwnElement<String>(53,"fbewgninofewnjioaewinoewain")));
-        System.out.println("instanceof: "+(ownMapStrings.get(532).getValue() instanceof  OwnElement));
+        System.out.println("instanceof String: "+(ownMapStrings.get(532).getValue() instanceof  String));
         System.out.println("added key "+ownMapStrings.add(new OwnElement(637,"KTYKYT")));
         System.out.println("isEmpty: "+ownMapStrings.isEmpty()+"\n");
         ownMapStrings.print();
