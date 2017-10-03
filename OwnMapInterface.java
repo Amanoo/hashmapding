@@ -3,8 +3,10 @@
  */
 public interface OwnMapInterface<T> {
 
+
     public int add(OwnElement<T> element1);
-    public OwnElement<T> remove( int key);
+
+    public OwnElement<T> remove(int key);
     public int size();
     public boolean isEmpty();
     public OwnElement get(int key);

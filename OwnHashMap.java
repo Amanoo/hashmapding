@@ -1,7 +1,7 @@
 /**
  * Created by marco on 22/09/17.
  */
-public class OwnHashMap<T> implements OwnMapInterface {
+public class OwnHashMap<T> implements OwnMapInterface<T> {
     int size;
     OwnMap<OwnMap<T>> bucketList;
     OwnHashMap(int size){
@@ -21,7 +21,7 @@ public class OwnHashMap<T> implements OwnMapInterface {
     }
 
     @Override
-    public int add(OwnElement element1) {
+    public int add(OwnElement<T> element1) {
         return ((OwnMap)bucketList.get(firstPartKey(element1.getKey())).getValue()).add(element1);
     }
 

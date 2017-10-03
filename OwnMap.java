@@ -3,7 +3,7 @@ import java.util.Vector;
 /**
  * Created by marco on 08/09/17.
  */
-public class OwnMap<T> implements OwnMapInterface{
+public class OwnMap<T> implements OwnMapInterface<T>{
     private Vector<OwnElement<T>> myVector;
     public <T> OwnMap(){
         myVector= new Vector<>(10, 10);
@@ -11,7 +11,7 @@ public class OwnMap<T> implements OwnMapInterface{
 
 
     @Override
-    public int add(OwnElement element1) {
+    public int add(OwnElement<T> element1) {
         int i=0;
         int isValid = element1.getKey();
         while(i<myVector.size()&&isValid!=-1){
