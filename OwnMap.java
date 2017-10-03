@@ -70,6 +70,6 @@ public class OwnMap<T> implements OwnMapInterface<T>{
 
     @Override
     public void print(){
-        for(int i = 0; i<myVector.size(); i++)System.out.println(myVector.get(i).getKey()+"\t"+myVector.get(i).getValue());
+        for (OwnElement<T> aMyVector : myVector) System.out.println(aMyVector.getKey() + "\t" + aMyVector.getValue());
     }
 }
